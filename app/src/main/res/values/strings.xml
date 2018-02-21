@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CPSC466</string>
+    <string name="title">Trip Plans</string>
+    <string name="trip_name">TripName</string>
+    <string name="startEnd_location">StartEndLocation</string>
+    <string name="backButton">Back</string>
+    <string name="deleteButton">Delete</string>
+    <string name="saveButton">Save</string>
+
+    <string name="google_android_map_api_key">API KEY HERE</string>
+</resources>

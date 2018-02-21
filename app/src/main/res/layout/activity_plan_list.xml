@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.fullerton.ecs.cpsc466.PlanList">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3c6ea7"
+        android:fontFamily="sans-serif-smallcaps"
+        android:padding="7dp"
+        android:text="@string/title"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+
+    <ListView
+        android:id="@+id/tripPlanListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/individual_plans" />
+
+</LinearLayout>
