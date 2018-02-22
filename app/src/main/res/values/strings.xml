@@ -6,6 +6,7 @@
     <string name="backButton">Back</string>
     <string name="deleteButton">Delete</string>
     <string name="saveButton">Save</string>
+    <string name="menu_add">Add</string>
 
     <string name="google_android_map_api_key">API KEY HERE</string>
 </resources>
