@@ -9,20 +9,107 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:inputType="textPersonName"
         android:text="Plan Name"
         android:textAlignment="viewStart"
         android:textSize="36sp" />
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
+    <TextView
+        android:id="@+id/textViewStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:paddingTop="25dp"
+        android:text="@string/startLocation"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/startLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/secondLocation"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/secondLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewThird"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/thirdLocation"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/thirdLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewFourth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/fourthLocation"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/fourthLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewFifth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/fifthLocation"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/fifthLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewEnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/endLocation"
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/endLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="bottom" >
 
         <Button
             android:id="@+id/backButton"

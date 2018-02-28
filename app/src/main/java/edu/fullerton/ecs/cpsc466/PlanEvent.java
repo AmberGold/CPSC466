@@ -7,22 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.UiSettings;
 
 
 
-public class PlanEvent extends AppCompatActivity implements OnClickListener, TextView.OnEditorActionListener, OnMapReadyCallback {
+public class PlanEvent extends AppCompatActivity implements OnClickListener, TextView.OnEditorActionListener {
 
-    private MapView mapView;
-    private GoogleMap googleMap;
 
     EditText titleEditText;
 
@@ -30,7 +25,20 @@ public class PlanEvent extends AppCompatActivity implements OnClickListener, Tex
     Button deleteButton;
     Button backButton;
 
-    private static final String MAP_VIEW_BUNDLE_KEY = "@string/google_android_map_api_key";
+    TextView textViewStart;
+    TextView textViewSecond;
+    TextView textViewThird;
+    TextView textViewFourth;
+    TextView textViewFifth;
+    TextView textViewEnd;
+
+    Spinner startLocation;
+    Spinner secondLocation;
+    Spinner thirdLocation;
+    Spinner fourthLocation;
+    Spinner fifthLocation;
+    Spinner endLocation;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,84 +51,34 @@ public class PlanEvent extends AppCompatActivity implements OnClickListener, Tex
         backButton = (Button) findViewById(R.id.backButton);
         deleteButton = (Button) findViewById(R.id.deleteButton);
 
+        textViewStart = (TextView) findViewById(R.id.textViewStart);
+        textViewSecond = (TextView) findViewById(R.id.textViewSecond);
+        textViewThird = (TextView) findViewById(R.id.textViewThird);
+        textViewFourth = (TextView) findViewById(R.id.textViewFourth);
+        textViewFifth = (TextView) findViewById(R.id.textViewFifth);
+        textViewEnd = (TextView) findViewById(R.id.textViewEnd);
+
+        startLocation = (Spinner) findViewById(R.id.startLocation);
+        secondLocation = (Spinner) findViewById(R.id.secondLocation);
+        thirdLocation = (Spinner) findViewById(R.id.thirdLocation);
+        fourthLocation = (Spinner) findViewById(R.id.fourthLocation);
+        fifthLocation = (Spinner) findViewById(R.id.fifthLocation);
+        endLocation = (Spinner) findViewById(R.id.endLocation);
+
+        saveButton.setOnClickListener(this);
+        backButton.setOnClickListener(this);
+        deleteButton.setOnClickListener(this);
+
         titleEditText.setOnEditorActionListener(this);
-
-        Bundle mapViewBundle = null;
-        if (savedInstanceState != null) {
-            mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
-        }
-
-        mapView = findViewById(R.id.mapView);
-        mapView.onCreate(mapViewBundle);
-        mapView.getMapAsync(this);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        Bundle mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY);
-        if (mapViewBundle == null) {
-            mapViewBundle = new Bundle();
-            outState.putBundle(MAP_VIEW_BUNDLE_KEY, mapViewBundle);
-        }
-
-        mapView.onSaveInstanceState(mapViewBundle);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mapView.onResume();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mapView.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mapView.onStop();
-    }
-    @Override
-    protected void onPause() {
-        mapView.onPause();
-        super.onPause();
-    }
-    @Override
-    protected void onDestroy() {
-        mapView.onDestroy();
-        super.onDestroy();
-    }
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mapView.onLowMemory();
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        googleMap = googleMap;
-        googleMap.setMinZoomPreference(12);
-        googleMap.setIndoorEnabled(true);
-        UiSettings uiSettings = googleMap.getUiSettings();
-        uiSettings.setIndoorLevelPickerEnabled(true);
-        uiSettings.setMyLocationButtonEnabled(true);
-        uiSettings.setMapToolbarEnabled(true);
-        uiSettings.setCompassEnabled(true);
-        uiSettings.setZoomControlsEnabled(true);
-
-        MarkerOptions markerOptions = new MarkerOptions();
-        googleMap.addMarker(markerOptions);
 
     }
 
     @Override
     public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-        return false;
+        if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_UNSPECIFIED) {
+
+        }
+        return true;
     }
 
     @Override

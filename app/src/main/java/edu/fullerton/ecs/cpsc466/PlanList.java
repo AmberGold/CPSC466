@@ -7,13 +7,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.TextView;
+import android.widget.ListView;
 
-public class PlanList extends AppCompatActivity {
+public class PlanList extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+    private TextView titleTextView;
+    private ListView tripPlanListView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_list);
+
+        titleTextView = (TextView) findViewById(R.id.titleTextView);
+        tripPlanListView = (ListView) findViewById(R.id.tripPlanListView);
+
+        tripPlanListView.setOnItemClickListener(this);
+
     }
 
     //show options bar menu
@@ -34,5 +46,13 @@ public class PlanList extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    // for when user clicks on plans
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent = new Intent(this, PlanEvent.class);
+        intent.putExtra("index", i);
+        startActivity(intent);
     }
 }

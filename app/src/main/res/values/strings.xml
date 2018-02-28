@@ -8,5 +8,10 @@
     <string name="saveButton">Save</string>
     <string name="menu_add">Add</string>
 
-    <string name="google_android_map_api_key">API KEY HERE</string>
+    <string name="startLocation">Starting Location</string>
+    <string name="secondLocation">Second Location</string>
+    <string name="thirdLocation">Third Location</string>
+    <string name="fourthLocation">Fourth Location</string>
+    <string name="fifthLocation">Fifth Location</string>
+    <string name="endLocation">Ending Location</string>
 </resources>
