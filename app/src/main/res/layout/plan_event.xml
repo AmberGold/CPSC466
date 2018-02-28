@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
-        android:paddingTop="25dp"
+        android:paddingTop="50dp"
         android:text="@string/startLocation"
         android:textAlignment="textEnd"
         android:textSize="18sp" />
@@ -29,7 +29,7 @@
         android:id="@+id/startLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="30dp"/>
+        android:paddingBottom="45dp"/>
 
     <TextView
         android:id="@+id/textViewSecond"
@@ -44,7 +44,7 @@
         android:id="@+id/secondLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="30dp"/>
+        android:paddingBottom="45dp"/>
 
     <TextView
         android:id="@+id/textViewThird"
@@ -59,7 +59,7 @@
         android:id="@+id/thirdLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="30dp"/>
+        android:paddingBottom="45dp"/>
 
     <TextView
         android:id="@+id/textViewFourth"
@@ -74,7 +74,7 @@
         android:id="@+id/fourthLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="30dp"/>
+        android:paddingBottom="45dp"/>
 
     <TextView
         android:id="@+id/textViewFifth"
@@ -89,7 +89,7 @@
         android:id="@+id/fifthLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="30dp"/>
+        android:paddingBottom="45dp"/>
 
     <TextView
         android:id="@+id/textViewEnd"

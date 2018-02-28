@@ -39,7 +39,7 @@ public class PlanList extends AppCompatActivity implements AdapterView.OnItemCli
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_add_plan:
-                Intent intent = new Intent(this, PlanEvent.class);
+                Intent intent = new Intent(PlanList.this, PlanEvent.class);
                 startActivity(intent);
                 return true;
 

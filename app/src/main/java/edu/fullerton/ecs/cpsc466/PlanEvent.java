@@ -1,6 +1,7 @@
 package edu.fullerton.ecs.cpsc466;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +17,9 @@ import android.widget.TextView;
 
 
 
-public class PlanEvent extends AppCompatActivity implements OnClickListener, TextView.OnEditorActionListener {
+public class PlanEvent extends AppCompatActivity implements OnClickListener {
 
+    private SharedPreferences savedValues;
 
     EditText titleEditText;
 
@@ -38,6 +40,8 @@ public class PlanEvent extends AppCompatActivity implements OnClickListener, Tex
     Spinner fourthLocation;
     Spinner fifthLocation;
     Spinner endLocation;
+
+    private String titleString = "";
 
 
     @Override
@@ -69,16 +73,18 @@ public class PlanEvent extends AppCompatActivity implements OnClickListener, Tex
         backButton.setOnClickListener(this);
         deleteButton.setOnClickListener(this);
 
-        titleEditText.setOnEditorActionListener(this);
+        savedValues = getSharedPreferences("SavedValues", MODE_PRIVATE);
 
     }
 
+    // If app closes, saves the value of the title string
     @Override
-    public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-        if (i == EditorInfo.IME_ACTION_DONE || i == EditorInfo.IME_ACTION_UNSPECIFIED) {
+    protected void onResume() {
+        titleString = savedValues.getString("titleString", "");
 
-        }
-        return true;
+        titleEditText.setText(titleString);
+
+        super.onResume();
     }
 
     @Override
@@ -99,6 +105,7 @@ public class PlanEvent extends AppCompatActivity implements OnClickListener, Tex
     }
 
     private void savePlan() {
+        titleString = titleEditText.getText().toString();
 
     }
 
